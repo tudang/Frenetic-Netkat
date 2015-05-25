@@ -1,0 +1,24 @@
+OASISFormat: 0.4
+Name:        Monitor
+Version:     0.1
+Synopsis:    A Frenetic controller
+Authors:     Tu Dang, Robert Soule
+License:     LGPL-2.1 with OCaml linking exception
+Plugins:     META (0.4), DevFiles (0.4)
+
+Executable Main
+  Install:    False
+  Build$:     flag(is_native)
+  Path:       src
+  BuildTools: ocamlbuild
+  CompiledObject: native
+  MainIs:    main.ml 
+  BuildDepends:
+    core,
+    async,
+    packet,
+    openflow,
+    sexplib,
+    netkat,
+    netkat.async,
+    threads
