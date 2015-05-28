@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Inspired by Jane Street's corebuild script, this script just adds the
+# usual dependencies of Frenetic.
+ocamlbuild \
+  -use-ocamlfind \
+  -classic-display \
+  -syntax camlp4o \
+  -pkg core \
+  -pkg async \
+  -pkg netkat \
+  -pkg netkat.async \
+  -pkg netkat.syntax \
+  -tag thread \
+  -tag debug \
+  -tag annot \
+  -tag bin_annot \
+  -tag short_paths \
+  -cflags "-w -40" \
+  $@
+
